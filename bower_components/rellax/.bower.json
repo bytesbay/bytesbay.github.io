@@ -1,0 +1,31 @@
+{
+  "name": "rellax",
+  "main": "rellax.js",
+  "homepage": "https://dixonandmoe.com/rellax/",
+  "authors": [
+    "moeamaya <moeamaya@gmail.com>"
+  ],
+  "description": "vanilla javascript parallax",
+  "moduleType": [],
+  "keywords": [
+    "parallax"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "e818e0e16f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e818e0e16f6a47fd98804b0fd91d49e23de9f1db"
+  },
+  "_source": "https://github.com/dixonandmoe/rellax.git",
+  "_target": "*",
+  "_originalSource": "rellax",
+  "_direct": true
+}
