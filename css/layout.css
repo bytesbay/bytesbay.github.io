@@ -1,11 +1,11 @@
 @font-face {
-    name: 'Eina';
+    font-family: 'Eina';
     font-weight: 400;
     font-style: normal;
     src: url(/static/eina-03-regular.ttf);
 }
 @font-face {
-    name: 'Eina';
+    font-family: 'Eina';
     font-weight: 600;
     font-style: normal;
     src: url(/static/eina-03-semibold.ttf);
