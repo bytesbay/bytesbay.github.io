@@ -1,3 +1,17 @@
+@font-face {
+    name: 'Eina';
+    font-weight: 400;
+    font-style: normal;
+    src: url(/static/eina-03-regular.ttf);
+}
+@font-face {
+    name: 'Eina';
+    font-weight: 600;
+    font-style: normal;
+    src: url(/static/eina-03-semibold.ttf);
+}
+
+
 div, span, p, h1, h2, h3, h4, h5, h6, input, textarea, img {
     box-sizing: border-box;
     vertical-align: middle;
@@ -9,7 +23,7 @@ html {
     background-repeat: repeat;
     background-image: url(../static/space.png);
     font-size: 1em;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Eina', sans-serif;
     overflow-x: hidden;
     min-width: 320px;
     line-height: 135%;
@@ -64,7 +78,7 @@ textarea {
 }
 
 #wrapper {
-    
+
     flex: 1 0 auto;
 }
 #content {
