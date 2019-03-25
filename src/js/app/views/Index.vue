@@ -1,9 +1,9 @@
 <template lang="html">
   <main>
     <div class="preview-author">
-      <div class="authoer-wrapper">
-        <h1>MIROSLAW SHPAK</h1>
-        <h4>Programmer / Designer </h4>
+      <div class="author-wrapper">
+        <h1>Miroslaw Shpak</h1>
+        <h4>DEVELOPER</h4>
       </div>
     </div>
 
@@ -38,32 +38,17 @@ export default {
         {
           name: 'EMBED SYSTEMS',
           text: 'C/C++ Embed dev - STM32, AVR, Arduino',
-          background: '#fff',
-          icon: '<i class="fas fa-microchip"></i>'
+          background: 'http://i.imgur.com/ZZBiHOH.jpg',
         },
         {
           name: 'WEB',
           text: 'Web dev - PHP7, JS, SQL, HTML/CSS',
-          background: '#fff',
-          icon: '<i class="fas fa-globe"></i>'
+          background: 'https://cdn.mos.cms.futurecdn.net/noyPQQbBJyozEwVpULzUvM.jpg',
         },
         {
           name: 'UNIX',
-          text: 'Advanced Linux user - Bash/Python scripting.',
-          background: '#fff',
-          icon: '<i class="fab fa-linux"></i>'
-        },
-        {
-          name: 'DESIGN',
-          text: 'This site is one of many sites I designed and made',
-          background: '#fff',
-          icon: '<i class="fas fa-paint-brush"></i>'
-        },
-        {
-          name: 'Also ... ',
-          text: 'Knowledge of newest technologies like blockchain and deep learning',
-          background: '#fff',
-          icon: '<i class="fas fa-bolt"></i>'
+          text: 'Advanced Linux user - Bash/Python scripting',
+          background: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Map_of_Ganymede_by_Bj%C3%B6rn_J%C3%B3nsson.jpg',
         }
       ]
     };
@@ -111,7 +96,7 @@ export default {
 
       if(this.curr_section != section_num) {
 
-        this.$refs.planet.style.backgroundColor = this.sections[section_num].background;
+        this.$refs.planet.style.backgroundImage = 'url(' + this.sections[section_num].background + ')';
 
         this.$refs.title.innerHTML = this.sections[section_num].name;
         this.$refs.content.innerHTML = this.sections[section_num].text;
@@ -134,34 +119,44 @@ export default {
 
 @import "~@/vars.scss";
 
+@keyframes rotating {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 .preview-author {
   width: 100%;
   height: 100px;
   margin: 0 auto;
   text-align: center;
   color: #000;
-  padding: 10px;
-  .authoer-wrapper {
-    background: $clr-green;
-    padding: 10px;
+  .author-wrapper {
+    background: #fff;
+    padding: 20px 10px;
   }
   h1, h4 {
     margin: 10px 0;
-    line-height: 100%;
+    line-height: 150%;
+    margin: 0;
   }
   h4 {
     font-weight: normal;
+    font-size: 12px;
   }
   h1 {
-    font-weight: 500;
-    letter-spacing: 5px;
+    font-weight: 400;
     font-size: 40px;
+    letter-spacing: 2px;
   }
 }
 
 .slider-wrapper {
   position: relative;
-  height: 6000px;
+  height: 3600px;
 }
 
 .grav-anchor {
@@ -186,12 +181,14 @@ export default {
   width: 300px;
   height: 300px;
   border-radius: 100%;
-  background: $clr-green;
+  background: #fff;
   overflow: hidden;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://svs.gsfc.nasa.gov/vis/a010000/a012000/a012021/Hubble_Jupiter_maps_compared_H264_1920x1080_print.jpg);
+  background-color: #fff;
+  background-image: url(http://solarviews.com/raw/jup/jupitercyl2.jpg);
+  box-shadow: inset -10px 0 20px rgba(0,0,0,0.8);
+  animation: rotating 20s linear infinite;
 }
 .sun-shadow {
   border-radius: 100%;
@@ -217,9 +214,10 @@ export default {
   height: 120px;
   border-radius: 100%;
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(https://cdn.mos.cms.futurecdn.net/noyPQQbBJyozEwVpULzUvM.jpg);
+  background-color: #fff;
+  box-shadow: inset -10px 0 20px rgba(0,0,0,0.8);
+  animation: rotating 10s linear infinite;
 }
 
 .interesting-text {
@@ -234,8 +232,8 @@ export default {
   background: transparent;
   border-radius: 0 0 0 0;
   padding-bottom: 10px;
-  color: $clr-green;
-  border: 3px solid $clr-green;
+  color: #fff;
+  border-bottom: 3px solid #fff;
   &.fixed {
     position: fixed;
   }

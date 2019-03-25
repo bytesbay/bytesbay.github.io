@@ -10,11 +10,18 @@
   font-family: 'App';
   font-weight: 400;
   font-style: normal;
-  src: url('/static/Sevastopol-Interface.ttf');
+  // src: url('/static/Sevastopol-Interface.ttf');
+  src: url('/static/eina-03-regular.ttf');
+}
+@font-face {
+  font-family: 'App';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/static/eina-03-semibold.ttf');
 }
 
 html {
-  background-color: $clr-dd-green;
+  background-color: #000;
   background-position: center;
   background-repeat: repeat;
   // background-image: url(/static/space.png);
@@ -26,6 +33,7 @@ html {
   font-size: 18px;
   color: $clr-green;
   -webkit-font-smoothing: subpixel-antialiased;
+
 }
 
 button {

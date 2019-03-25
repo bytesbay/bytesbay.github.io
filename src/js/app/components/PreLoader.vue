@@ -26,7 +26,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: $clr-dd-green;
+  background: #000;
   z-index: 100;
   overflow: hidden;
   .abs {

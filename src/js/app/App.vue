@@ -1,5 +1,6 @@
 <template lang="html">
   <div id="app">
+    <stars/>
     <router-view id="content"></router-view>
     <transition name="retro-wave">
       <pre-loader v-if="preloader"/>
@@ -11,6 +12,7 @@
 <script>
 import AppFooter from './components/AppFooter.vue'
 import PreLoader from './components/PreLoader.vue'
+import Stars from './components/Stars.vue'
 
 export default {
   data() {
@@ -21,6 +23,7 @@ export default {
   components: {
     AppFooter,
     PreLoader,
+    Stars,
   },
   mounted() {
     setTimeout(() => {

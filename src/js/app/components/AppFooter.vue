@@ -28,15 +28,15 @@ footer {
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 300px;
-    border-top: 3px solid $clr-green;
-    font-size: 22px;
+    width: 400px;
+    border-top: 3px solid #fff;
+    font-size: 16px;
     a {
       flex-grow: 1;
       padding: 10px 0;
-      color: $clr-green;
+      color: #fff;
       &:hover {
-        background: $clr-green;
+        background: #fff;
         color: #000;
       }
     }
