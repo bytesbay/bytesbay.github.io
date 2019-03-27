@@ -9,10 +9,23 @@
 
     <div class="slider-wrapper">
 
+      <!-- <transition>
+        <button class="portfolio" @click="" v-if="fixed">
+          MENU
+        </button>
+      </transition> -->
+
       <div class="interesting-text" ref="interesting" :class="{ fixed: fixed }">
-        <div class="title" ref="title"></div>
-        <div class="content" ref="content"></div>
+        <div class="title">{{ title }}</div>
+        <div class="content" v-html="content"></div>
+        <!-- <button class="more" @click="$modal.show('portfolio')">
+          MORE
+        </button> -->
       </div>
+
+      <modal name="portfolio">
+        qweqweqwe
+      </modal>
 
       <div class="grav-anchor" :class="{ fixed: fixed }">
         <div class="sun">
@@ -32,17 +45,19 @@
 export default {
   data() {
     return {
+      title: '',
+      content: '',
       fixed: false,
       curr_section: -1,
       sections: [
         {
           name: 'EMBED SYSTEMS',
-          text: 'C/C++ Embed dev - STM32, AVR, Arduino',
+          text: 'C/C++ Embed dev - STM32, AVR, Arduino, Unreal Engine 4',
           background: 'http://i.imgur.com/ZZBiHOH.jpg',
         },
         {
           name: 'WEB',
-          text: 'Web dev - PHP7, JS, SQL, HTML/CSS',
+          text: 'Web dev - PHP7 (Laravel, Lumen), JS (Vue.js, Node.js, ES6JS, Electron, Cordova)',
           background: 'https://cdn.mos.cms.futurecdn.net/noyPQQbBJyozEwVpULzUvM.jpg',
         },
         {
@@ -81,7 +96,7 @@ export default {
         var display = 'block';
       }
 
-      if(offset >= 100) {
+      if(offset >= 120) {
         this.fixed = true;
       } else {
         this.fixed = false;
@@ -95,14 +110,10 @@ export default {
       this.$refs.interesting.style.opacity = scale.map(MIN_SIZE, MAX_SIZE, -0.5, 2);
 
       if(this.curr_section != section_num) {
-
         this.$refs.planet.style.backgroundImage = 'url(' + this.sections[section_num].background + ')';
-
-        this.$refs.title.innerHTML = this.sections[section_num].name;
-        this.$refs.content.innerHTML = this.sections[section_num].text;
-
+        this.title = this.sections[section_num].name;
+        this.content = this.sections[section_num].text;
         // $('.planet .icon').html(this.sections[section_num].icon);
-
         this.curr_section = section_num;
       }
 
@@ -130,7 +141,7 @@ export default {
 
 .preview-author {
   width: 100%;
-  height: 100px;
+  height: 120px;
   margin: 0 auto;
   text-align: center;
   color: #000;
@@ -168,6 +179,17 @@ export default {
     position: fixed;
     bottom: 50%;
   }
+}
+
+.portfolio {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  height: 30px;
+  padding: 0 10px;
+  line-height: 30px;
+  background: #fff;
+  color: #000;
 }
 
 .sun {
@@ -223,8 +245,7 @@ export default {
 .interesting-text {
   position: absolute;
   top: 20px;
-  height: 120px;
-  width: 600px;
+  width: 700px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -249,10 +270,30 @@ export default {
   }
   .content {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
+  }
+  .more {
+    position: absolute;
+    height: 40px;
+    padding: 0 10px;
+    line-height: 40px;
+    background: #fff;
+    color: #000;
+    top: calc(100% + 10px);
+    left: 10px;
   }
   @media (max-width: 600px) {
     width: 300px;
+    height: 75px;
+    .title {
+      font-size: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
+    .content {
+      text-align: center;
+      font-size: 14px;
+    }
   }
 }
 

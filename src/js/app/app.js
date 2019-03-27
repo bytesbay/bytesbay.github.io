@@ -1,5 +1,8 @@
 import Vue from 'vue';
+import VueModal from 'vue-js-modal';
 import App from './App.vue';
+
+Vue.use(VueModal);
 
 import './preferences.js';
 

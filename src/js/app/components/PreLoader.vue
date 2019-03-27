@@ -2,7 +2,7 @@
   <div class="pre-loader">
     <div class="abs">
       <div class="stripe">
-        <div class="ready"></div>
+        <div :style="{ width: percent + '%' }" class="ready"></div>
       </div>
       <div class="copy">
         &copy; <span>PRAVOTE</span> <span>DATA</span> <span>SYSTEMS</span>
@@ -13,6 +13,11 @@
 
 <script>
 export default {
+  props: {
+    percent: {
+      type: Number
+    }
+  }
 }
 </script>
 
@@ -39,11 +44,11 @@ export default {
     .stripe {
       width: 100%;
       height: 50px;
-      border: 3px solid $clr-green;
+      border: 3px solid #fff;
       .ready {
         width: 90%;
         height: 100%;
-        background: $clr-green;
+        background: #fff;
         float: left;
       }
     }

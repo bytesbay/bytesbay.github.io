@@ -3,7 +3,7 @@
     <stars/>
     <router-view id="content"></router-view>
     <transition name="retro-wave">
-      <pre-loader v-if="preloader"/>
+      <pre-loader :percent="percent" v-if="preloader"/>
     </transition>
     <app-footer/>
   </div>
@@ -18,6 +18,8 @@ export default {
   data() {
     return {
       preloader: true,
+      percent: 0,
+      interval: null,
     };
   },
   components: {
@@ -26,9 +28,18 @@ export default {
     Stars,
   },
   mounted() {
-    setTimeout(() => {
-      this.preloader = false;
-    }, 2000);
+    this.interval = setInterval(() => {
+      this.percent += Math.random() * 20;
+
+      if(this.percent > 100) {
+        this.percent = 100;
+        clearInterval(this.interval);
+        this.$nextTick(() => {
+          this.preloader = false;
+        });
+      }
+
+    }, 100);
   }
 }
 </script>
@@ -54,20 +65,16 @@ export default {
   }
 }
 
-.pre-loader {
-  transition: height 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
-}
 .retro-wave-leave-active {
-
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 .retro-wave-leave {
-  opacity: 1;
+
 }
 .retro-wave-leave-to {
-  opacity: 0;
-  height: 0 !important;
-  transform: scale(1.2) translateY(50px);
-  border-top: 3px solid $clr-green;
+  background-color: #fff !important;
+  transform-origin: 50%;
+  transform: scaleY(0);
 }
 
 </style>
